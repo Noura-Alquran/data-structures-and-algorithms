@@ -15,7 +15,6 @@ const raisedToTheThird = (arr) => {
     arrOfNumbers.push(element)
   });
   return arrOfNumbers;
-  // Solution code here...
 }
 
 /* ------------------------------------------------------------------------------------------------

@@ -41,14 +41,14 @@ For example: 'Cat' would come before 'apple'
 const sortNames = (arr) => {
   // Solution code here...
   arr.sort( (a, b)=> {
-    if (a < b){
+   if (a < b){
         return -1;
       }
     if (a > b){
         return 1;
     }
     return 0;
-})
+  });
 return arr;
 };
 
@@ -277,6 +277,11 @@ const meetings = [
 
 const sortMeetingsByDay = (arr) => {
   // Solution code here...
+  let arr2 = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+  arr.sort((a, b) => {
+    return arr2.indexOf(a.dayOfWeek) - arr2.indexOf(b.dayOfWeek);
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -291,6 +296,16 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 
 const sortSchedule = (arr) => {
   // Solution code here...
+  sortMeetingsByDay(arr);
+
+  arr.sort((a, b) => {
+    if (a.dayOfWeek == b.dayOfWeek) {
+      return (parseInt(a.end) - parseInt(a.start)) - (parseInt(b.end) - parseInt(b.start));
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -425,7 +440,7 @@ describe('Testing challenge 11', () => {
   });
 });
 
-xdescribe('Testing challenge 12', () => {
+describe('Testing challenge 12', () => {
   test('It should sort meetings by the day on which they happen', () => {
     const sortedMeetings = sortMeetingsByDay(meetings);
     expect(sortedMeetings.slice(0,2)).toEqual(expect.arrayContaining([new Meeting('Monday', '0900', '0945'), new Meeting('Monday', '0900', '1000')]));
@@ -435,7 +450,7 @@ xdescribe('Testing challenge 12', () => {
   });
 });
 
-xdescribe('Testing challenge 13', () => {
+describe('Testing challenge 13', () => {
   test('It should sort meetings by when they happen', () => {
     expect(sortSchedule(meetings)).toStrictEqual([
       new Meeting('Monday', '0900', '0945'),

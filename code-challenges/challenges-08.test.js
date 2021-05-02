@@ -11,7 +11,7 @@ function returnTen(str){
   // Solution code here...
  let string=str.split("");
  let num=string.length-10;
- let result=string.slice(num,string.length);
+ let result=string.splice(num,10);
  return result;
 }
 
@@ -41,11 +41,15 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
-  const checkAnd= /and/;
-  let filtered = arr.filter(function (n){
-     return checkAnd.test(n);
-   });
-   return filtered;
+  // const checkAnd= /and/;
+  // let filtered = arr.filter(function (n){
+  //    return checkAnd.test(n);
+  //  });
+  //  return filtered;
+  const array=arr.filter(element=>{
+    return element.includes('and');
+  })
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -142,6 +146,8 @@ const snorlaxData = {
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
   // Solution code here...
+  return arr.filter(elem => elem.baseStat > minBaseStat);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -154,6 +160,8 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 
 const getStatName = (arr, minBaseStat) => {
   // Solution code here...
+  return arr.filter(elem => elem.baseStat > minBaseStat).map(elem=>elem.stat.name);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -207,6 +215,10 @@ const characters = [
 
 const getCharactersWithoutChildren = (arr) => {
   // Solution code here...
+  const array= arr.filter(element=>{
+   return (!element.children);
+  });
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -219,6 +231,16 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 
 const evenOddNumericValues = (arr) => {
   // Solution code here...
+  const array=[];
+  arr.filter(element=>typeof(element)==='number').map(element=>{
+    if(element%2===0){
+      array.push('even');
+    }
+    else{
+      array.push('odd');
+    }
+  });
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -303,7 +325,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return an array containing the stats that are greater than the input', () => {
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75)).toStrictEqual([ { stat: { url: 'https://pokeapi.co/api/v2/stat/5/', name: 'special-defense' }, effort: 2, baseStat: 110 } ]);
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75).length).toStrictEqual(1);
@@ -314,7 +336,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return the name of the stats that exceed that maximum', () => {
     expect(getStatName(snorlaxData.stats, 50)).toStrictEqual([ 'special-defense', 'special-attack' ]);
     expect(getStatName(snorlaxData.stats, 50).length).toStrictEqual(2);
@@ -335,14 +357,14 @@ xdescribe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return an array containing characters who do not have children', () => {
     expect(getCharactersWithoutChildren(characters)).toStrictEqual([ { name: 'Sansa', spouse: 'Tyrion', house: 'Stark' }, { name: 'Jon', spouse: null, house: 'Snow' } ]);
     expect(getCharactersWithoutChildren(characters).length).toStrictEqual(2);
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should remove non-integers and return "even" or "odd', () => {
     expect(evenOddNumericValues(['Gregor', 2, 4, 1])).toStrictEqual(['even', 'even', 'odd']);
     expect(evenOddNumericValues(['Gregor', 2, 4, 1]).length).toStrictEqual(3);
