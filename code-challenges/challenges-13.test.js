@@ -7,14 +7,8 @@ Write a function named longestString that takes in an array of strings and retur
 ------------------------------------------------------------------------------------------------ */
 
 const longestString = (arr) => {
-    // Solution code here...
-    // const longest = arr.sort(function(a, b) {
-
-    //     return b.length - a.length
-    // });
-    // console.log(longest);
-    // return arr.indexOf(longest[0]);
-    const answer = arr.reduce(function(longest, entry, index) {
+  
+    const answer = arr.reduce((longest, entry, index)=> {
         return entry.length > longest.value.length ? { index: index, value: entry } : longest;
     }, { index: -1, value: '' });
     return answer.index;
@@ -108,6 +102,12 @@ const allHappy = (arr) => {
 
 const findAnything = (arr, target) => {
     // Solution code here...
+    const array= arr.filter(element=>{
+       if (element.includes(target)){
+           return element;
+       };
+    })
+    return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,6 +118,8 @@ Write a function named findEvery that takes in an array of strings, along with a
 
 const findEvery = (arr, target) => {
     // Solution code here...
+    return arr.every(elem => elem.includes(target));
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -134,6 +136,7 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 
 const unenrollBrook = (arr) => {
     // Solution code here...
+    return arr.map(subArr=>subArr.filter(element=>!element.includes('Brook')));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -161,6 +164,10 @@ const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Sat
 
 const sortByDay = (arr) => {
     // Solution code here...
+ arr.sort((a,b)=>{
+     return daysOfWeek.indexOf(a.includes(daysOfWeek))
+ })
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -173,6 +180,8 @@ For example, ['abcd', 'efgh', 'ijkl', 'mnop'] returns ['a', 'f', 'k', 'p']
 
 const characterByIndex = (arr) => {
     // Solution code here...
+    return arr.map((elem, idx) => elem[idx]);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -247,7 +256,7 @@ describe('Testing challenge 6', () => {
     });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
     test('It should find all the strings that contain a given string', () => {
         const words = ['things', 'apple (:)', ':)banana', 'missing that thing', 'cant:)aloupe'];
 
@@ -256,7 +265,7 @@ xdescribe('Testing challenge 7', () => {
     });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
     test('It should determine whether all the strings contain a given string', () => {
         const words = ['things', 'apple pie (:)', ':)banana pie', 'missing that thing', 'cant:)aloupe is tasty'];
 
@@ -266,7 +275,7 @@ xdescribe('Testing challenge 8', () => {
     });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
     test('It should remove Brook from all courses', () => {
         const roster = [
             ['Michelle', 'Allie', 'Brook TESTING'],
@@ -292,7 +301,7 @@ xdescribe('Testing challenge 9', () => {
     });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
     test('It should sort events by the day on which they happen', () => {
         const events = ['Dancing on Mondays and Tuesdays', 'Meet the inventors! Monday, August 7', 'in the club on a Tuesday', 'Thursday Night Code', 'Saturday Night Fever'];
         const sortedEvents = sortByDay(events);
@@ -316,7 +325,7 @@ xdescribe('Testing challenge 10', () => {
     });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
     test('It should return the ith character of the ith string', () => {
         const words = ['apple', 'banana', 'cantaloupe'];
 
