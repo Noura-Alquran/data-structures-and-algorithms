@@ -1,4 +1,4 @@
-from challenges.array_binary_search.array_binary_search import BinarySearch
+from code_challenges.array_binary_search.array_binary_search import BinarySearch
 
 def test_BinarySearch():
     excepted = 2
