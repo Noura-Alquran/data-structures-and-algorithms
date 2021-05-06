@@ -76,8 +76,8 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 - **Run in watch mode** - `ptw` or `pytest-watch`
 
 ## Table of Contents:
-1|[]()
+1|[code challenge 1](code_challenges/array_reverse)
 -|-------
-2|[]()
-3|[]()
-4|[]()
+2|[code challenge 2](code_challenges/arrayShift)
+3|[code challenge 3](code_challenges/array_binary_search)
+4|[code challenge 4](Data_Structures/linked_list/README.md)
