@@ -301,7 +301,7 @@ describe('Testing challenge 9', () => {
     });
 });
 
-describe('Testing challenge 10', () => {
+xdescribe('Testing challenge 10', () => {
     test('It should sort events by the day on which they happen', () => {
         const events = ['Dancing on Mondays and Tuesdays', 'Meet the inventors! Monday, August 7', 'in the club on a Tuesday', 'Thursday Night Code', 'Saturday Night Fever'];
         const sortedEvents = sortByDay(events);
