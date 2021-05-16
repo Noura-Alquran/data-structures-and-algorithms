@@ -80,4 +80,5 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 -|-------
 2|[code challenge 2](code_challenges/arrayShift)
 3|[code challenge 3](code_challenges/array_binary_search)
-4|[code challenge 4](Data_Structures/linked_list/README.md)
+4|[code challenge 5](Data_Structures/linked_list/README.md)
+5|[code challenge 6](Data_Structures/linked_list/README2.md)
