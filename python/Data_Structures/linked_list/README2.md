@@ -9,7 +9,8 @@
  3. .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
 
 # Approach & Efficiency
-watch the videos until understanding then i write the code.
+* ![image](../../assets/LinkedList2.jpg)
+
 
 + insert ---> O(1)
 + includes ---> O(n)
