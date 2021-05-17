@@ -82,3 +82,4 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 3|[code challenge 3](code_challenges/array_binary_search)
 4|[code challenge 5](Data_Structures/linked_list/README.md)
 5|[code challenge 6](Data_Structures/linked_list/README2.md)
+6|[code challenge 7](Data_Structures/linked_list/README3.md)
