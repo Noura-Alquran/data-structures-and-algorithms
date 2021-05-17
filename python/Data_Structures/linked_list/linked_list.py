@@ -86,7 +86,7 @@ class LinkedList():
         if k >= len:
             return "not exist"
         current = self.head
-        for j in range(0,len - k):
+        for i in range(0,len - k):
             current = current.next_node
         return current.data
 
