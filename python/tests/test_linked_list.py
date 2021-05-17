@@ -44,7 +44,41 @@ def test_insertAfter(After_test):
     actual = f"{After_test}"
     assert excpected == actual
 
+# Code challenge 7
+# “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+def test_ll_kthFromEnd(kth_test):
+    excpected = 2
+    actual=kth_test
+    assert excpected == actual
 
+def test_ll_kthFromEnd_one(kth_test_one):
+    excpected = 8
+    actual=kth_test_one
+    assert excpected == actual
+
+# Where the linked list is of a size 1
+def test_ll_kthFromEnd_size_one(kth_test_two):
+    excpected ="not exist"
+    actual=kth_test_two
+    assert excpected == actual
+
+# Where k is not a positive integer
+def test_ll_kthFromEnd_negative_k(kth_test_three):
+    excpected = "incorrect k value"
+    actual=kth_test_three
+    assert excpected == actual
+
+# Where k is greater than the length of the linked list
+def test_ll_kthFromEnd_k_larger(kth_test_four):
+    excpected = "not exist"
+    actual=kth_test_four
+    assert excpected == actual
+
+# Where k and the length of the list are the same
+def test_ll_kthFromEnd_k_same_size(kth_test_same):
+    excpected = "not exist"
+    actual=kth_test_same
+    assert excpected == actual
 
 @pytest.fixture
 def empty_list():
@@ -86,3 +120,53 @@ def After_test():
     linked.insertAfter("Jana","Eman")
     return linked
 
+@pytest.fixture
+def kth_test():
+    linked_l = LinkedList()
+    linked_l.insert(2)
+    linked_l.insert(8)
+    linked_l.insert(3)
+    linked_l.insert(1)
+    return linked_l.ll_kthFromEnd(0)
+
+@pytest.fixture
+def kth_test_one():
+    linked_l = LinkedList()
+    linked_l.insert(2)
+    linked_l.insert(8)
+    linked_l.insert(3)
+    linked_l.insert(1)
+    return linked_l.ll_kthFromEnd(1)
+
+@pytest.fixture
+def kth_test_two():
+    linked_l = LinkedList()
+    linked_l.insert(2)
+    return linked_l.ll_kthFromEnd(0)
+
+@pytest.fixture
+def kth_test_three():
+    linked_l = LinkedList()
+    linked_l.insert(2)
+    linked_l.insert(8)
+    linked_l.insert(3)
+    linked_l.insert(1)
+    return linked_l.ll_kthFromEnd(-3)
+
+@pytest.fixture
+def kth_test_four():
+    linked_l = LinkedList()
+    linked_l.insert(2)
+    linked_l.insert(8)
+    linked_l.insert(3)
+    linked_l.insert(1)
+    return linked_l.ll_kthFromEnd(6)
+
+@pytest.fixture
+def kth_test_same():
+    linked_l = LinkedList()
+    linked_l.insert(2)
+    linked_l.insert(8)
+    linked_l.insert(3)
+    linked_l.insert(1)
+    return linked_l.ll_kthFromEnd(4)

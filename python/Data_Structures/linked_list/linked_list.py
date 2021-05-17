@@ -17,13 +17,13 @@ class LinkedList():
         self.head = head
 
     def insert(self, data): # this implementation of insert is constant O(1)
-        data=str(data)
+        # data=str(data)
         new_node = Node(data)
         new_node.set_new_next(self.head)
         self.head = new_node
 
     def includes(self,value):
-        value=str(value)
+        # value=str(value)
         current = self.head
         value_exists=False
         while current and value_exists is False:
@@ -73,6 +73,24 @@ class LinkedList():
                     return
                 before=before.next_node
 
+
+    def ll_kthFromEnd (self,k):
+        current = self.head
+        len =0
+        if k<0:
+            return "incorrect k value"
+
+        while current.next_node:
+            current = current.next_node
+            len += 1
+        if k >= len:
+            return "not exist"
+        current = self.head
+        for j in range(0,len - k):
+            current = current.next_node
+        return current.data
+
+
     def __str__ (self):
         output = ""
         current = self.head
@@ -89,18 +107,13 @@ if __name__ == "__main__":
   linked_list.insert("Noura")
   linked_list.insert("Jana")
   linked_list.insert(5)
-  linked_list.append(1222)
-  linked_list.append("Mamoun")
-  linked_list.insertBefore(2,"Manal")
-  print(linked_list.insertBefore(1222,"Manal"))
   print(linked_list)
   print(linked_list.includes("Jana"))
   print(linked_list.includes("Noura"))
   print(linked_list.includes(5))
   print(linked_list.includes(15))
-  print(linked_list.append(1222))
+
   e_list=LinkedList()
   e_list.append("test")
   print(e_list)
-
-
+  print(linked_list.ll_kthFromEnd(2))
