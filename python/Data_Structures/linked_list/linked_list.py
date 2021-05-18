@@ -89,8 +89,6 @@ class LinkedList():
         for i in range(0,len - k):
             current = current.next_node
         return current.data
-
-
     def __str__ (self):
         output = ""
         current = self.head
