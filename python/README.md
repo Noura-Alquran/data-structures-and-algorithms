@@ -84,3 +84,4 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 5|[code challenge 6](Data_Structures/linked_list/README2.md)
 6|[code challenge 7](Data_Structures/linked_list/README3.md)
 7|[code challenge 8](code_challenges/zipLists/README.md)
+8|[code challenge 10](stacks_and_queues/README.md)
