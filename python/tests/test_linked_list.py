@@ -23,25 +23,54 @@ def test_includes(list_test):
     excpected = [False, True , True]
     assert excpected == actual
 
+# Code challenge 6
+# Can successfully add a node to the end of the linked list
 def test_append(list_test):
     excpected = "{10} -> {Jana} -> {Noura} -> {1222} ->  None"
     actual = f"{list_test}"
     assert excpected == actual
 
+# Can successfully append a node to empty list
 def test_append_to_empty_list(e_list):
     excpected = "{test} ->  None"
     actual = f"{e_list}"
     print(actual)
     assert excpected == actual
 
-def test_insertBefore(before_test):
-    excpected = "{10} -> {Jana} -> {Noura} -> {Manal} -> {1222} ->  None"
-    actual = f"{before_test}"
+# Can successfully add multiple nodes to the end of a linked list
+def test_append_multiple_nodes(list_test):
+    list_test.append(22)
+    list_test.append(12)
+    excpected = "{10} -> {Jana} -> {Noura} -> {1222} -> {22} -> {12} ->  None"
+    actual = f"{list_test}"
     assert excpected == actual
 
-def test_insertAfter(After_test):
-    excpected = "{10} -> {Jana} -> {Eman} -> {Noura} -> {Manal} -> {1222} ->  None"
-    actual = f"{After_test}"
+# Can successfully insert a node before a node located i the middle of a linked list
+def test_insertBefore(list_test):
+    list_test.insertBefore(1222,"Manal")
+    excpected = "{10} -> {Jana} -> {Noura} -> {Manal} -> {1222} ->  None"
+    actual = f"{list_test}"
+    assert excpected == actual
+
+# Can successfully insert a node before the first node of a linked list
+def test_insertBefore_first_node(list_test):
+    list_test.insertBefore(10,"Mamoun")
+    excpected = "{Mamoun} -> {10} -> {Jana} -> {Noura} -> {1222} ->  None"
+    actual = f"{list_test}"
+    assert excpected == actual
+
+# Can successfully insert after a node in the middle of the linked list
+def test_insertAfter(list_test):
+    list_test.insertAfter("Jana","Eman")
+    excpected = "{10} -> {Jana} -> {Eman} -> {Noura} -> {1222} ->  None"
+    actual = f"{list_test}"
+    assert excpected == actual
+
+# Can successfully insert a node after the last node of the linked list
+def test_insertAfter_last_node(list_test):
+    list_test.insertAfter(1222,1996)
+    excpected = "{10} -> {Jana} -> {Noura} -> {1222} -> {1996} ->  None"
+    actual = f"{list_test}"
     assert excpected == actual
 
 # Code challenge 7
@@ -98,27 +127,6 @@ def e_list():
     e_list=LinkedList()
     e_list.append("test")
     return e_list
-
-@pytest.fixture
-def before_test():
-    before_test= LinkedList()
-    before_test.insert("Noura")
-    before_test.insert("Jana")
-    before_test.insert(10)
-    before_test.append(1222)
-    before_test.insertBefore(1222,"Manal")
-    return before_test
-
-@pytest.fixture
-def After_test():
-    linked = LinkedList()
-    linked.insert("Noura")
-    linked.insert("Jana")
-    linked.insert(10)
-    linked.append(1222)
-    linked.insertBefore(1222,"Manal")
-    linked.insertAfter("Jana","Eman")
-    return linked
 
 @pytest.fixture
 def kth_test():

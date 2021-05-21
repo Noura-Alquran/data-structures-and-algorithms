@@ -50,6 +50,8 @@ class LinkedList():
     def insertBefore(self ,value, newVal):
         new_node = Node(newVal)
         before = self.head
+        if self.head is None:
+            return "Linked List is empty!"
         if not before.data == value:
             old=before
             while before:
@@ -60,6 +62,9 @@ class LinkedList():
                 else:
                     old = before
                     before = before.next_node
+        else :
+            new_node.set_new_next(self.head)
+            self.head = new_node
 
 
     def insertAfter(self ,value, newVal):
@@ -101,7 +106,7 @@ class LinkedList():
 
 if __name__ == "__main__":
   linked_list = LinkedList()
-  print(linked_list)
+  print(linked_list.insertBefore(None,5))
   linked_list.insert("Noura")
   linked_list.insert("Jana")
   linked_list.insert(5)
