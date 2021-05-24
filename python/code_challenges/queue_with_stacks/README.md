@@ -9,7 +9,7 @@
 
 ## Approach & Efficiency:
 ### Whiteboard:
-![image]()
+![image](../../assets/PesudoQueue.jpg)
 * Big O :
   - enqueue() >> O(1) .
   - dequeue >> O(n) .
