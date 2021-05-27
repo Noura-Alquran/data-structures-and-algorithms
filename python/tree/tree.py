@@ -1,6 +1,6 @@
 # Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
 class Node:
-    def __init__(self, value):
+    def __init__(self, value=None):
         self.value = value
         self.left = None
         self.right = None
@@ -15,9 +15,9 @@ class BinaryTree:
 
     def preOrder(self):
         ## [root][left][right]
-        if not self.root:
-            return []
-        output = []
+        output=[]
+        if self.root == None:
+            return output
         def walk(root):
             output.append(root.value)
             if root.left:
@@ -29,10 +29,9 @@ class BinaryTree:
 
     def inOrder(self):
         ## [left][root][right]
-        ## ordered the result
-        if not self.root:
-            return []
         output = []
+        if self.root==None:
+            return output
         def walk(root):
             if root.left:
                 walk(root.left)
@@ -44,9 +43,9 @@ class BinaryTree:
 
     def postOrder(self):
         ## [left][right][root]
-        if not self.root:
-            return []
         output = []
+        if self.root==None:
+            return output
         def walk(root):
             if root.left:
                 walk(root.left)
