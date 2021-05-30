@@ -55,6 +55,21 @@ class BinaryTree:
         walk(self.root)
         return output
 
+    # Code challenge 16
+    def find_maximum_value(self):
+        if self.root == None:
+            return 0
+        maximum_value=self.root.value
+        def walk(root):
+            nonlocal maximum_value
+            if root.value > maximum_value:
+                maximum_value=root.value
+            if root.left:
+                walk(root.left)
+            if root.right:
+                walk(root.right)
+            return maximum_value
+        return walk(self.root)
 
 
 class BinarySearchTree(BinaryTree):
@@ -113,7 +128,7 @@ if __name__ == '__main__':
     print(binary_tree.preOrder()) #[1,2,9,7,3,4,5]
     print(binary_tree.inOrder()) #[9,2,7,1,4,3,5]
     print(binary_tree.postOrder()) #[9,7,2,4,5,3,1]
-
+    print(binary_tree.find_maximum_value())
     bts=BinarySearchTree(node1)
     print(bts.contains(2))
     print(bts.contains(10))
