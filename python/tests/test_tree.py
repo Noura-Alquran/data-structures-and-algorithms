@@ -67,6 +67,17 @@ def test_contains_method(tree_test_two):
     actual=tree_test_two.contains(2)
     assert actual == expected
 
+## Code challenge 16
+# Can succussfully find the maximum value in the tree
+def test_find_max_value_within_tree(tree_test):
+    expected=9
+    actual=tree_test.find_maximum_value()
+    assert actual == expected 
+
+
+
+
+
 @pytest.fixture
 def tree_test():
     node1 = Node(1)
