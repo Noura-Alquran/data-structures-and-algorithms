@@ -90,3 +90,4 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 11|[code challenge 13](code_challenges/multi_bracket_validation/README.md)
 12|[code challenge 15](tree/README.md)
 13|[code challenge 16](tree/README_two.md)
+14|[code challenge 17](code_challenges/BinaryTree/README.md)
