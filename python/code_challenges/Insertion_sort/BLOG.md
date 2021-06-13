@@ -30,4 +30,6 @@
 * temp =15
 * the last pass ,the last index swap itself **[4,6,7,9,15]>>[4,6,7,9,15]**
 
+## All Samples visulization:
 
+![image](../../assets/All_Samples_visualization.jpg)
