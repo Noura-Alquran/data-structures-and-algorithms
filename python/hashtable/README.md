@@ -9,7 +9,7 @@
 * hash: takes in an arbitrary key and returns an index in the collection.
 
 ## Approach & Efficiency
-* Big O is O(1) for all methods
+* Big O is O(1) for all methods, but O(n) in the worst case
 
 ## API
 * Add(): When adding a new key/value pair to a hashtable.
