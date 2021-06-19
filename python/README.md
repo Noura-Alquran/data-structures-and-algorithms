@@ -95,3 +95,4 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 16|[code challenge 26](code_challenges/Insertion_sort/README.md)
 17|[code challenge 27](code_challenges/Merge_Sort/README.md)
 18|[code challenge 28](code_challenges/Quick_sort/README.md)
+19|[code challenge 30](hashtable/README.md)
