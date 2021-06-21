@@ -1,17 +1,17 @@
-# Code Challenge 31 :
-## Find the first repeated word in a book.
+# Code Challenge 32 :
+## Find common values in 2 binary trees.
 ## Challenge
-* Write a function that accepts a lengthy string parameter.
-* Without utilizing any of the built-in library methods available to your language, return the first word to occur more than once in that provided string.
+* Write a function called tree_intersection that takes two binary tree parameters.
+* Without utilizing any of the built-in library methods available to your language, return a set of values found in both trees.
 
 ## Approach & Efficiency:
 ### Whiteboard:
-- ![image](../../assets/repeated_word.jpg)
+- ![image](../../assets/tree_intersection.jpg)
 
 ### Efficiency (Big O) :
 * Big O :
-* Time O(n^2)
-* Space O(n)
+* Time O(n)
+* Space O(1)
 
 # Tasks:
 - [x] Top-level README “Table of Contents” is updated
@@ -22,5 +22,4 @@
 - [x] Description, Approach & Efficiency, Solution
 - [x] Link to code
 
-* [code](repeated_word.py)
-
+* [code](tree_intersection.py)
