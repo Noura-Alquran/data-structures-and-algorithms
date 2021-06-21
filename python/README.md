@@ -97,3 +97,4 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 18|[code challenge 28](code_challenges/Quick_sort/README.md)
 19|[code challenge 30](hashtable/README.md)
 20|[code challenge 31](code_challenges/repeated_word/README.md)
+21|[code challenge 32](code_challenges/tree_intersection/README.md)
