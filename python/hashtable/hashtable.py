@@ -29,14 +29,7 @@ class LinkedList():
             current=self.head
         return current.__str__()
 
-    def __str__ (self):
-        output = ""
-        current = self.head
-        while current:
-            output += "{%s} -> " %(current.data,)
-            current = current.next_node
-        output += " None"
-        return output
+
 
 
 class HashTable():
