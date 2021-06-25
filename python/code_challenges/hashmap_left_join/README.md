@@ -9,17 +9,14 @@
 *  - Combine the key and corresponding values (if they exist) into a new data structure according to LEFT JOIN logic.
    -  LEFT JOIN means all the values in the first hashmap are returned, and if values exist in the “right” hashmap, they are appended to the result row.
    - If no values exist in the right hashmap, then some flavor of NULL should be appended to the result row.
-
-
 ## Approach & Efficiency:
 ### Whiteboard:
 - ![image](../../assets/hashmap_left_join.jpg)
 
 ### Efficiency (Big O) :
 * Big O :
-* Time O(n+m)
-* Space O(n+m)
-
+* Time O(n)
+* Space O(n)
 # Tasks:
 - [x] Top-level README “Table of Contents” is updated
 - [x] Feature tasks for this challenge are completed
