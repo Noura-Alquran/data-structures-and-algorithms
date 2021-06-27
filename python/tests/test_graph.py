@@ -45,3 +45,23 @@ def test_empty_graph():
   gr = Graph()
   assert gr.print_graph()== None
   print('pass')
+
+
+def test_BFS_graph():
+  gr = Graph()
+  v1= gr.add_node('A')
+  v2 =gr.add_node('B')
+  v3=gr.add_node('C')
+  v4=gr.add_node('D')
+  v5=gr.add_node('E')
+  gr.add_edge(v1,v2,1)
+  gr.add_edge(v1,v3,2)
+  gr.add_edge(v2,v4,4)
+  gr.add_edge(v3,v4,8)
+  gr.add_edge(v3,v5,3)
+  gr.add_edge(v4,v5,5)
+  gr.add_edge(v2,v1,10)
+  gr.add_edge(v3,v1,7)
+  gr.add_edge(v4,v3,8)
+  gr.add_edge(v5,v3,7)
+  assert gr.breath_first_search(v1) == ['A','B','C','D','E']

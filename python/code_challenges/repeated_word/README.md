@@ -8,11 +8,8 @@
 ### Whiteboard:
 - ![image](../../assets/repeated_word.jpg)
 
-### Efficiency (Big O) :
-* Big O :
-* Time O(n^2)
-* Space O(n)
-
+- **Solution 2**
+- ![image](../../assets/first_repeated_word.jpg)
 # Tasks:
 - [x] Top-level README “Table of Contents” is updated
 - [x] Feature tasks for this challenge are completed

@@ -55,3 +55,31 @@
 - [x] Description, Approach & Efficiency, Solution
 - [x] Link to code
 
+########################################################################
+# Code challenge 36
+## Implement a breadth-first traversal on a graph.
+## Challenge :
+* Write the following method for the Graph class:
+      - breadth first
+         - Arguments: Node
+         - Return: A collection of nodes in the order they were visited.
+         - Display the collection
+   
+## Approach & Efficiency:
+* ![image](../assets/Breath_first_Search_graph.jpg)
+* Big O :
+- Time : O(V+E)
+- Space : O(n)
+
+## Tasks checklist:
+- [x] Top-level README “Table of Contents” is updated
+- [x] Feature tasks for this challenge are completed
+- [x] Unit tests written and passing
+- [x] “Happy Path” - Expected outcome
+- [x] Expected failure
+- [x] Edge Case (if applicable/obvious)
+- [x] README for this challenge is complete
+- [x] Description, Approach & Efficiency, Solution
+- [x] Link to code
+
+* [code](graph.py)

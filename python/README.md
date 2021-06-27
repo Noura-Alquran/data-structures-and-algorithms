@@ -100,3 +100,4 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 21|[code challenge 32](code_challenges/tree_intersection/README.md)
 22|[code challenge 33](code_challenges/hashmap_left_join/README.md)
 23|[code challenge 35](graph/README.md)
+24|[code challenge 36](graph/README.md)

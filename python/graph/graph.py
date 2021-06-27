@@ -1,3 +1,5 @@
+from collections import deque
+
 class Vertex():
   def __init__(self,key):
     self.key = key
@@ -5,7 +7,18 @@ class Vertex():
   def __str__(self):
     return str(self.key)
 
+class Queue():
+  def __init__(self):
+    self.dq =deque()
+  
+  def enqueue(self,value):
+    self.dq.appendleft(value)
 
+  def dequeue(self):
+    return self.dq.pop()
+  
+  def __len__ (self):
+    return len(self.dq)
 
 class Graph():
   def __init__(self):
@@ -35,6 +48,25 @@ class Graph():
   
   def size(self):
     return len(self._adjacency_list)
+  
+   
+  def breath_first_search(self ,start_vertex):
+    list=[]
+    queue = Queue()
+    visited = set()
+
+    queue .enqueue(start_vertex)
+    visited.add(start_vertex)
+    
+    while len(queue):
+      current_vertex = queue.dequeue()
+      list.append(current_vertex)
+      for child in self._adjacency_list[current_vertex]:
+        if child[0] not in visited:
+          child=child[0]
+          visited.add(child)
+          queue.enqueue(child)
+    return list
   
   def print_graph(self):
     print(self._adjacency_list)
