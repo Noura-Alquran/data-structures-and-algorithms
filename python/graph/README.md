@@ -83,3 +83,33 @@
 - [x] Link to code
 
 * [code](graph.py)
+  
+
+########################################################################
+# Code challenge 37
+## Challenge :
+* Write a function called business trip
+    - Arguments: graph, array of city names
+    - Return: cost or null
+
+* Determine whether the trip is possible with direct flights, and how much it would cost.
+   
+## Approach & Efficiency:
+* ![image](../assets/business_trip.jpg)
+* Big O :
+- Time : O(n)
+- Space : O(1)
+
+## Tasks checklist:
+- [x] Top-level README “Table of Contents” is updated
+- [x] Feature tasks for this challenge are completed
+- [x] Unit tests written and passing
+- [x] “Happy Path” - Expected outcome
+- [x] Expected failure
+- [x] Edge Case (if applicable/obvious)
+- [x] README for this challenge is complete
+- [x] Description, Approach & Efficiency, Solution
+- [x] Link to code
+
+* [code](graph.py)
+

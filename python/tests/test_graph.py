@@ -65,3 +65,24 @@ def test_BFS_graph():
   gr.add_edge(v4,v3,8)
   gr.add_edge(v5,v3,7)
   assert gr.breath_first_search(v1) == ['A','B','C','D','E']
+
+
+def test_business_trip():
+  gr = Graph()
+  v1= gr.add_node('Irbid')
+  v2 =gr.add_node('Amman')
+  v3=gr.add_node('Ajlun')
+  v4=gr.add_node('Aqaba')
+  v5=gr.add_node('Makkah')
+  v6=gr.add_node('Jaresh')
+  gr.add_edge(v1,v2,15)
+  gr.add_edge(v1,v3,10)
+  gr.add_edge(v2,v4,25)
+  gr.add_edge(v3,v4,35)
+  gr.add_edge(v3,v5,370)
+  gr.add_edge(v4,v5,255)
+  gr.add_edge(v2,v3,5)
+  gr.add_edge(v3,v6,5)
+  gr.add_edge(v5,v6,420)
+  cities=[v1,v3,v5 ]
+  assert gr.business_trip(cities) == (True,'$380')
