@@ -1,7 +1,9 @@
 from collections import deque
 
+class EmptyStackException(Exception):
+    pass
 class Vertex():
-  def __init__(self,key):
+  def __init__(self,key=None):
     self.key = key
   
   def __str__(self):
@@ -19,6 +21,45 @@ class Queue():
   
   def __len__ (self):
     return len(self.dq)
+
+
+class Stack():
+  def __init__(self,top = None):
+    self.top =top
+
+  def push(self,value):
+    new_Node=Vertex(value)
+    new_Node.next=self.top
+    self.top = new_Node
+  
+  def pop(self):
+    if not self.isEmpty():
+      temp = self.top
+      self.top = self.top.next
+      temp.next =None
+      return temp.key
+    raise EmptyStackException("stack is empty")
+ 
+  
+  def peek(self):
+    if not self.isEmpty():
+      return self.top.key
+    raise EmptyStackException("stack is empty")
+
+
+  def isEmpty(self):
+    if self.top:
+      return False
+    return True
+
+  def __str__(self):
+    top = self.top
+    items = []
+    while top:
+      items.append(str(top.value))
+      top = top.next
+    return " ".join(items)
+
 
 class Graph():
   def __init__(self):
@@ -92,6 +133,28 @@ class Graph():
   def print_graph(self):
     print(self._adjacency_list)
 
+  def depth_first(self, start_vertex =None):
+    vertexes = []
+    visited =[]
+    stack = Stack()
+
+    if start_vertex not in self._adjacency_list:
+      raise KeyError('Start vertex is not found in the graph')
+
+    stack.push(start_vertex)
+
+    while not stack.isEmpty():
+
+      vertex = stack.pop()
+      vertexes.append(vertex)
+      vertex_neighbors = self.neighbors(vertex)
+
+      for neighbor in vertex_neighbors:
+        if neighbor[0] not in visited :
+          stack.push(neighbor[0])
+          visited.append(neighbor[0])
+
+    return vertexes    
 
 
 if __name__ == "__main__":
