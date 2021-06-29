@@ -113,3 +113,30 @@
 
 * [code](graph.py)
 
+########################################################################
+# Code challenge 38
+## Challenge :
+* Write the following method for the Graph class:
+   - depth first
+   - Arguments: An adjacency list as a graph
+   - Return: A collection of nodes in their pre-order depth-first traversal order
+   - Display the collection
+
+## Approach & Efficiency:
+* ![image](../assets/dfs.jpg)
+* Big O :
+- Time : O(n)
+- Space : O(n)
+
+## Tasks checklist:
+- [x] Top-level README “Table of Contents” is updated
+- [x] Feature tasks for this challenge are completed
+- [x] Unit tests written and passing
+- [x] “Happy Path” - Expected outcome
+- [x] Expected failure
+- [x] Edge Case (if applicable/obvious)
+- [x] README for this challenge is complete
+- [x] Description, Approach & Efficiency, Solution
+- [x] Link to code
+
+* [code](graph.py)
