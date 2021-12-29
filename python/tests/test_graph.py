@@ -1,4 +1,4 @@
-from graph.graph import Graph
+from graph.graph import *
 import pytest
 
 def test_add_node_successfully():
@@ -86,3 +86,25 @@ def test_business_trip():
   gr.add_edge(v5,v6,420)
   cities=[v1,v3,v5 ]
   assert gr.business_trip(cities) == (True,'$380')
+
+def test_DFS():
+  gr = Graph()
+  v1= gr.add_node('A')
+  v2 =gr.add_node('B')
+  v3=gr.add_node('C')
+  v4=gr.add_node('D')
+  v5=gr.add_node('E')
+  v6 =gr.add_node('F')
+  v7 =gr.add_node('G')
+  v8 =gr.add_node('H')
+  gr.add_edge(v1,v4,1)
+  gr.add_edge(v1,v2,1)
+  gr.add_edge(v2,v3,1)
+  gr.add_edge(v3,v7,1)
+  gr.add_edge(v4,v6,1)
+  gr.add_edge(v4,v8,1)
+  gr.add_edge(v4,v5,1)
+  gr.add_edge(v6,v8,1)
+  gr.add_edge(v2,v4,1)
+  print(gr.depth_first(v1))
+  assert gr.depth_first(v1) == ['A', 'B', 'C', 'G', 'D', 'E', 'H', 'F']
